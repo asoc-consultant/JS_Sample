@@ -14,3 +14,8 @@ jobs:
           asoc_key: ${{secrets.ASOC_CONSULTANT_KEY}}
           asoc_secret: ${{secrets.ASOC_CONSULTANT_SECRET}}
           application_id: ${{vars.ASOC_APPID_SAST}}
+          wait_for_analysis: true
+          fail_for_noncompliance: true
+          failure_threshold: Medium
+
+
