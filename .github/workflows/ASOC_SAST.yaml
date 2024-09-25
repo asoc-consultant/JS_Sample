@@ -10,7 +10,7 @@ jobs:
       - name: Run AppScan SAST Scan
         uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1.0.6
         with:
-          baseurl:  https://cloud.appscan.com
+          service_url:  https://cloud.appscan.com/
           asoc_key: ${{secrets.ASOC_KEY}}
           asoc_secret: ${{secrets.ASOC_SECRET}}
           application_id: ${{vars.ASOC_APPID_SAST}}
