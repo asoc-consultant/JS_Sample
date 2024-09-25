@@ -1,6 +1,6 @@
 name: "HCL AppScan SAST"
 on:
-  push
+  workflow_dispatch
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -17,5 +17,10 @@ jobs:
           wait_for_analysis: true
           fail_for_noncompliance: true
           failure_threshold: Medium
-
+    - uses: actions/upload-artifact@v3
+        name: Upload HCL AppScan HTML Report to Github Artifacts
+        with:
+          name: AppScan Security Scan HTML Report 
+          path: '**/AppScan*.html'
+        if: success() || failure()
 
