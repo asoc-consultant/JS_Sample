@@ -18,7 +18,7 @@ jobs:
           fail_for_noncompliance: true
           failure_threshold: Low
       - name: Upload HCL AppScan HTML Report to Github Artifacts
-        uses: actions/upload-artifact@v3.2.2-node20
+        uses: actions/upload-artifact@v7
         with:
           name: AppScan Security Scan HTML Report 
           path: '**/Repport*.html'
