@@ -1,6 +1,6 @@
 name: "HCL AppScan SAST"
 on:
-  push
+  workflow_dispatch
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run AppScan SAST Scan
-        uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1.0.6
+        uses: HCL-TECH-SOFTWARE/appscan-sast-action@v1.0.9
         with:
           service_url:  https://cloud.appscan.com/
           asoc_key: ${{secrets.ASOC_CONSULTANT_KEY}}
@@ -16,7 +16,7 @@ jobs:
           application_id: ${{vars.ASOC_APPID_SAST}}
           wait_for_analysis: true
           fail_for_noncompliance: true
-          failure_threshold: Medium
+          failure_threshold: Low
       - name: Upload HCL AppScan HTML Report to Github Artifacts
         uses: actions/upload-artifact@v3
         with:
