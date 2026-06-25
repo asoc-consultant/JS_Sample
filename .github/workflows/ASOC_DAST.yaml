@@ -25,7 +25,7 @@ jobs:
           # Choose between dast or upload. DAST will require you to specify starting URL and login, while upload will only require you to specify a .scan or .scant file
           dynamic_scan_type: # default is dast
           # The starting URL of the DAST scan
-          starting_URL: https://demo.testfire.net?mode=demo
+          starting_URL: # default is https://demo.testfire.net?mode=demo
           # Login Method of the scan, can be none, userpass, or recorded
           login_method: userpass
           login_user: jsmith
