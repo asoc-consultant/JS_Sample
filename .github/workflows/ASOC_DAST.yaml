@@ -21,7 +21,7 @@ jobs:
           # The ASoC application id where your scan will appear.
           application_id: 'a354e870-1749-4d43-b1c8-f96fc9a138a3'
           # The name of the scan created in ASoC.
-          scan_name: From_GH_Workflow
+          scan_name: # optional
           # Choose between dast or upload. DAST will require you to specify starting URL and login, while upload will only require you to specify a .scan or .scant file
           dynamic_scan_type: # default is dast
           # The starting URL of the DAST scan
