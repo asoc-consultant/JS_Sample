@@ -11,9 +11,12 @@ jobs:
         uses: HCL-TECH-SOFTWARE/appscan-dast-action@v1.0.6
         with:
           baseurl:  https://cloud.appscan.com
-          asoc_key: ${{secrets.ASOC_KEY}}
-          asoc_secret: ${{secrets.ASOC_SECRET}}
-          application_id: ${{vars.ASOC_APPID}}
+          # API key for connecting to ASoC.
+          asoc_key: ${{secrets.ASOC_CONSULTANT_KEY}}
+          # Secret for connecting to ASoC.
+          asoc_secret: ${{secrets.ASOC_CONSULTANT_SECRET}}
+          # The ASoC application id where your scan will appear.
+          application_id: 'a354e870-1749-4d43-b1c8-f96fc9a138a3'
           dynamic_scan_type: dast
           starting_URL: 'https://demo.testfire.net'
           login_method: userpass
